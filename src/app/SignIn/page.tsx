@@ -1,31 +1,30 @@
 import React from 'react'
-import { SignUp } from '../component/RouteHead/RouteHead'
+import { SignIn } from '../component/RouteHead/RouteHead'
 import Header1 from '../component/Header/Header1'
 import { Inter } from 'next/font/google'
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from '@/components/ui/button';
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoApple } from "react-icons/io5";
-import { LuUserRound } from "react-icons/lu";
+
 import { PiEnvelopeSimple } from "react-icons/pi";
 import { PiLock } from "react-icons/pi";
 
 const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 
-function Signup() {
+function Signin() {
   return (
    <div>
         <Header1/>
-        <SignUp/>
+        <SignIn/>
         <div className='flex flex-col justify-center items-center gap-[20px]  py-[150px]' style={inter.style}>
           
             <div className='flex flex-col justify-between p-8 sm:w-[424px] w-auto h-auto bg-white border-white border-2 border-solid sm:drop-shadow-[0_0_45px_rgba(255,159,13,0.2)] drop-shadow-[0_0_30px_rgba(255,159,13,0.2)]'>
               <div className='flex flex-col gap-[32px]'>
-                <div><h3 className='text-[20px]  font-bold font-helvetica'>Sign Up</h3></div>
+                <div><h3 className='text-[20px]  font-bold font-helvetica'>Sign In</h3></div>
                 <div>
                  <form className='flex flex-col gap-[16px]'>
-                  <div className='flex flex-row gap-[4px] px-[4px] justify-between items-center sm:w-auto h-[44px] border-solid border-[2px] border-[#E0E0E0] '><LuUserRound className='sm:w-[24px] sm:h-[24px] text-[#4F4F4F]'/><input type="text" className='sm:w-[300px] w-[240px] ' placeholder='Name'/></div>
                   <div className='flex flex-row gap-[4px] px-[4px] justify-between items-center sm:w-auto h-[44px] border-solid border-[2px] border-[#E0E0E0] '><PiEnvelopeSimple className='sm:w-[24px] sm:h-[24px] text-[#4F4F4F]'/><input type="text" className='sm:w-[300px] w-[240px] '  placeholder='Email'/></div>
                   <div className='flex flex-row gap-[4px] px-[4px] justify-between items-center sm:w-auto h-[44px] border-solid border-[2px] border-[#E0E0E0] '><PiLock className='sm:w-[24px] sm:h-[24px] text-[#4F4F4F]'/><input type="text" className='sm:w-[300px] w-[240px] ' placeholder='Passward'/></div>
                 <div> <label className="flex items-center space-x-2">
@@ -67,4 +66,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Signin

@@ -10,13 +10,13 @@ const inter = Inter({weight:["400","700"], subsets:["latin"]})
 
 function Header() {
   return (
-    <div className="_3xl:fixed static left-[300px] flex justify-center ">
+    <div className="_3xl:fixed static  flex justify-center bg-black w-full ">
       <div className="w-[1320px] h-[87px] mt-[45px]  flex flex-col">
         <div className="flex flex-row gap-0 justify-center items-center text-[24px] font-bold ">
           <h1 className="text-[#FF9F0D]">Food</h1>
           <h1 className="text-white">tuck</h1>
         </div>
-        <div className="flex _3xl:justify-between 2xl:flex-row 2xl:gap-0 xl:gap-[30px] lg:justify-between lg:flex-col md:gap-[30px] md:flex-col gap-[20px]    flex-col  items-center">
+        <div className="flex _3xl:justify-between xl:flex-row 2xl:gap-0 xl:gap-[30px] lg:justify-between lg:flex-col md:gap-[30px] md:flex-col gap-[20px]    flex-col  items-center">
           <div className="flex flex-row justify-center item-center text-[10px] sm:text-[16px] gap-[20px]  sm:gap-[34px] text-white" style={inter.style}>
           <Link href="./">Home</Link>
           <Link href="/Menu">Menu</Link>

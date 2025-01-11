@@ -12,45 +12,43 @@ const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 function Footer() {
   return (
-    <div
-      className="h-auto lg:pt-[80px]   w-full bg-black text-white "
+    <div className="h-auto md:pt-[80px]   w-full bg-black text-white "
       style={inter.style}
     >
-      <div className="flex flex-col justify-center items-center _3xl:gap-[40px] xs:py-[80px] lg:gap-[60px] lg:py-0 lg:px-[30px] xl:px-0  ">
-        <div className="flex lg:justify-between lg:items-start lg:flex-row xs:flex-col sm:h-[120px] xs:h-auto _3xl:w-[1169px] xs:w-auto lg:w-full border-solid border-b-[1px] border-[#FF9F0D]">
-          <div className="flex justify-between lg:items-start xs:items-center flex-col gap-[20px] lg:text-start xs:text-center">
-            <div className="flex flex-row gap-0 sm:text-[32px] xs:text-[25px] font-bold ">
+      <div className="flex flex-col justify-center items-center xl:gap-[40px] py-[80px] md:gap-[60px] md:py-0 md:px-[30px] xl:px-0  ">
+        <div className="flex md:justify-between md:items-start md:flex-row flex-col sm:h-[120px] h-auto xl:w-[1169px] w-auto md:w-full border-solid border-b-[1px] border-[#FF9F0D]">
+          <div className="flex justify-between md:items-start items-center flex-col gap-[20px] md:text-start text-center">
+            <div className="flex flex-row gap-0 sm:text-[32px] text-[25px] font-bold ">
               <h5 className="text-[#FF9F0D]">St</h5>
               <h5>ill You Need Our Support ?</h5>
             </div>
-            <p className="xs:w-[190px] sm:w-full">
+            <p className="w-[190px] sm:w-full">
               Don’t wait make a smart & logical quote here. Its pretty easy.
             </p>
           </div>
-          <div className="flex items-center xs:justify-center lg:justify-start sm:flex-row xs:flex-col  sm:gap-0 xs:gap-2 sm:w-[459px] xs:w-auto ">
+          <div className="flex items-center justify-center md:justify-start sm:flex-row flex-col  sm:gap-0 gap-2 sm:w-[459px] w-auto ">
             <input
               type="email"
               placeholder=" Enter Your Email"
-              className="h-[55.86px]  sm:w-full xs:auto bg-[#FF9F0D] placeholder:text-white placeholder:opacity-[59%] px-[20px]"
+              className="h-[55.86px]  sm:w-full auto bg-[#FF9F0D] placeholder:text-white placeholder:opacity-[59%] px-[20px]"
             />
             <Button variant="white" size="white">
               Subscribe Now
             </Button>
           </div>
         </div>
-        <div className="flex justify-between 2xl:items-start xs:items-center 2xl:flex-row xs:flex-col 2xl:h-[331px] 2xl:w-[1320px] w-full xs:h-auto">
-          <div
-            className="sm:w-[395.2px] xs:w-auto xs:py-[40px] _3xl:py-0 flex flex-col 2xl:gap-[20px] xs:text-center 2xl:text-start "
+        <div className="flex justify-between lg:items-start items-center lg:flex-row flex-col lg:h-[331px] _3xl:w-[1320px] w-full _3xl:p-0 px-8 h-auto">
+          <div className="sm:w-[395.2px] w-auto py-[40px] xl:py-0 flex flex-col lg:gap-[20px] text-center md:text-start "
             style={inter.style}
           >
-            <div className="font-bold 2xl:text-[20px] sm:text-[40px] xs:text-[20px]">About Us.</div>
+            <div className="font-bold lg:text-[20px] sm:text-[40px] text-[20px] font-helvetica"  >About Us.</div>
             <div className="flex flex-col gap-[20px]">
               <p className="text-[18px]">
                 orporate clients and leisure travelers hasbeen relying on
                 Groundlink for dependablesafe, and professional chauffeured
                 carservice in major cities across World.
               </p>
-              <div className="flex 2xl:flex-row xs:flex-col 2xl:justify-between 2xl:items-stretch xs:justify-center xs:items-center  2xl:w-[243.74px] xs:w-full">
+              <div className="flex lg:flex-row flex-col lg:justify-between lg:items-stretch justify-center items-center  lg:w-[243.74px] w-full">
                 <div className="flex flex-row  justify-center items-center  bg-[#FF9F0D] text-white w-[77.23px] h-[70.79px] rounded-[3px]">
                   <AiOutlineHistory className="w-[39.61px] h-[39.33px]" />
                 </div>
@@ -65,8 +63,8 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col xs:pb-[40px] _3xl:pb-0 2xl:justify-between 2xl:item-start xs:justify-center xs:items-center 2xl:text-start xs:text-center h-[275.17px]">
-            <div className="font-bold text-[20px] xs:pb-[20px] 2xl:pb-0">Useful Links</div>
+          <div className="flex flex-col pb-[40px] xl:pb-0 lg:justify-between lg:item-start justify-center items-center md:items-start h-[275.17px]">
+            <div className="font-bold text-[20px] pb-[20px] lg:pb-0">Useful Links</div>
             <div className="flex flex-col justify-center gap-[16px] item-start">
                <p>About</p>
               <p>News</p>
@@ -76,8 +74,8 @@ function Footer() {
               <p>Contact</p>
             </div> 
             </div>
-          <div className="flex flex-col xs:pb-[40px] _3xl:pb-0 2xl:justify-between 2xl:item-start xs:justify-center xs:items-center 2xl:text-start xs:text-center h-[275.17px]">
-            <div className="font-bold text-[20px] xs:pb-[20px] 2xl:pb-0">Help?</div>
+          <div className="flex flex-col pb-[40px] xl:pb-0 lg:justify-between lg:item-start justify-center items-center md:items-start h-[275.17px]">
+            <div className="font-bold text-[20px] pb-[20px] lg:pb-0">Help?</div>
             <div className="flex flex-col justify-center gap-[16px] item-start">
               <p>FAQ</p>
               <p>Term & Condition</p>
@@ -87,7 +85,7 @@ function Footer() {
               <p>Privacy</p>
             </div>
           </div>
-          <div className="flex flex-col 2xl:justify-between 2xl:item-start xs:justify-center xs:items-center h-[275.17px] w-[273.83px]">
+          <div className="flex flex-col lg:justify-between lg:item-start justify-center items-center md:items-start h-[275.17px] w-[273.83px]">
             <div className="font-bold text-[20px] pb-[20px]">Recent Post</div>
             <div className="flex flex-col justify-center gap-[16px] item-start">
               <div className="flex flex-row justify-between w-[273.83px]">
@@ -124,10 +122,10 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="sticky bottom-0 flex justify-center items-center  w-full h-[99px] bg-[#4F4F4F]">
-        <div className="flex flex-row justify-between items-center w-[1318px]">
-          <p>Copyright © 2022 by Ayeman. All Rights Reserved.</p>
-          <div className="flex flex-row gap-[20px]"> 
+      <div className="flex justify-center items-center  w-full lg:h-[99px] h-auto bg-[#4F4F4F]">
+        <div className="flex lg:flex-row  flex-col justify-between items-center w-[1318px]">
+          <p className="lg:text-[16px] text-[18px]">Copyright © 2022 by Ayeman. All Rights Reserved.</p>
+          <div className="lg:flex lg:flex-row grid grid-cols-2 lg:gap-[20px] gap-[10px]"> 
             <div className="flex flex-row justify-center items-center bg-white text-black w-[35.85px] h-[35.85px] rounded-[3px]">
                   <FaFacebookF  />
                 </div>
@@ -140,7 +138,7 @@ function Footer() {
                 <div className="flex flex-row justify-center items-center bg-white text-[#FF9F0D] w-[35.85px] h-[35.85px] rounded-[3px]">
                   <BsYoutube  />
                 </div>
-                <div className="flex flex-row justify-center items-center bg-white text-black w-[35.85px] h-[35.85px] rounded-[3px]">
+                <div className="flex flex-row justify-center items-center bg-white text-black w-[35.85px] h-[35.85px] rounded-[3px] ">
                   <FaPinterest />
                 </div>
                 </div>

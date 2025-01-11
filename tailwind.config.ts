@@ -62,8 +62,13 @@ export default {
   		},
 		screens:{
 			  _3xl: "1920px",
-			  xs:"344px"
+			  xs:"344px",
+			   s1400:"1400px"
 		},
+		fontFamily:{
+
+		helvetica: [ 'Helvetica Neue','Helvetica', 'Arial', 'sans-serif'],
+		}
 		
   	}
   },
