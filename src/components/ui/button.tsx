@@ -36,6 +36,7 @@ const buttonVariants = cva(
         sign:"py-[16px] px-[48px] gap-[10px] rounded-none w-full h-auto",
         none:"",
         sm2: "h-[62px] w-[89px] text-[18px] rounded-[6px]",
+        input: "h-[46px] w-[46px] text-[18px] rounded-none",
       },
     },
     defaultVariants: {

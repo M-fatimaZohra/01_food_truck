@@ -2,13 +2,12 @@ import React from "react";
 import { ShoppingCart } from "../component/RouteHead/RouteHead";
 import Header1 from "../component/Header/Header1";
 import { Inter } from "next/font/google";
-
+import StarRating from "../component/star/star";
 import { Button } from "@/components/ui/button";
-import { IoStar } from "react-icons/io5";
+
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
-import { IoAddOutline } from "react-icons/io5";
-import { HiOutlineMinus } from "react-icons/hi";
+import AmountSetter from "../component/counter/counter";
 import {
   Table,
   TableBody,
@@ -24,6 +23,13 @@ const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 
 
+// const amount = ["35.00","25.00","15.00","45.00","15.00"]
+
+// const amountn = [35.00,25.00,15.00,45.00,15.00]
+
+// amountn.map((add)=>(
+//   add 
+// ))
 
 
 function shoppingCart() {
@@ -56,11 +62,11 @@ function shoppingCart() {
           <div><Image src="./shipp/product (2).svg" width={93} height={10} alt="burger"/></div>
           <div className="flex flex-col gap-[8px]">
             <p className="font-bold">Burger</p>
-          <p className="flex flex-row sm:gap-[8px] gap-[2px]  "><IoStar className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/></p></div>
+          <div className="flex flex-row sm:gap-[8px] gap-[2px]  "><StarRating/></div></div>
         </div>
         </TableCell>
       <TableCell className="text-[#333333]">$35.00</TableCell>
-      <TableCell><div className=" w-[110px] h-[32px] rounded-[18px] border-[1px] border-solid border-[#E0E0E0] flex flex-row justify-between px-[16px] items-center"><button>< HiOutlineMinus/></button>  <p>1</p><button><IoAddOutline className="w-[16px] h-[16px] text-[#1F242E]"/></button> </div></TableCell>
+      <TableCell><AmountSetter/></TableCell>
       <TableCell className=" font-bold text-[#050303]">$221.00</TableCell>
       <TableCell className="active:text-[#FF9F0D] text-[#333333]"><button><RxCross2 className="w-[20px] h-[20px]"/></button></TableCell>
     </TableRow>
@@ -70,11 +76,11 @@ function shoppingCart() {
           <div><Image src="./shipp/product (3).svg" width={93} height={10} alt="burger"/></div>
           <div className="flex flex-col gap-[8px]">
             <p className="font-bold">Fresh Lime</p>
-          <p className="flex flex-row sm:gap-[8px] gap-[2px]  "><IoStar className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/></p></div>
+          <div className="flex flex-row sm:gap-[8px] gap-[2px]  "><StarRating/></div></div>
         </div>
         </TableCell>
       <TableCell className="text-[#333333]">$25.00</TableCell>
-      <TableCell><div className=" w-[110px] h-[32px] rounded-[18px] border-[1px] border-solid border-[#E0E0E0] flex flex-row justify-between px-[16px] items-center"><button>< HiOutlineMinus/></button>  <p>1</p><button><IoAddOutline className="w-[16px] h-[16px] text-[#1F242E]"/></button> </div></TableCell>
+      <TableCell><AmountSetter/></TableCell>
       <TableCell className=" font-bold text-[#333333]">$521.00</TableCell>
       <TableCell className="active:text-[#FF9F0D] text-[#333333]"><button><RxCross2 className="w-[20px] h-[20px]"/></button></TableCell>
     </TableRow>
@@ -84,11 +90,11 @@ function shoppingCart() {
           <div><Image src="./shipp/product (4).svg" width={93} height={10} alt="burger"/></div>
           <div className="flex flex-col gap-[8px]">
             <p className="font-bold">Pizza</p>
-          <p className="flex flex-row sm:gap-[8px] gap-[2px]  "><IoStar className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/></p></div>
+          <div className="flex flex-row sm:gap-[8px] gap-[2px]  "><StarRating/></div></div>
         </div>
         </TableCell>
       <TableCell className="text-[#333333]">$15.00</TableCell>
-      <TableCell><div className=" w-[110px] h-[32px] rounded-[18px] border-[1px] border-solid border-[#E0E0E0] flex flex-row justify-between px-[16px] items-center"><button>< HiOutlineMinus/></button>  <p>1</p><button><IoAddOutline className="w-[16px] h-[16px] text-[#1F242E]"/></button> </div></TableCell>
+      <TableCell><AmountSetter/></TableCell>
       <TableCell className=" font-bold text-[#333333]">$421.00</TableCell>
       <TableCell className="active:text-[#FF9F0D] text-[#333333]"><button><RxCross2 className="w-[20px] h-[20px]"/></button></TableCell>
     </TableRow>
@@ -98,11 +104,11 @@ function shoppingCart() {
           <div><Image src="./shipp/product (5).svg" width={93} height={10} alt="burger"/></div>
           <div className="flex flex-col gap-[8px]">
             <p className="font-bold">Chocolate Muffin</p>
-          <p className="flex flex-row sm:gap-[8px] gap-[2px]  "><IoStar className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/></p></div>
+          <div className="flex flex-row sm:gap-[8px] gap-[2px]  "><StarRating/></div></div>
         </div>
         </TableCell>
       <TableCell className="text-[#333333]">$$45.00</TableCell>
-      <TableCell><div className=" w-[110px] h-[32px] rounded-[18px] border-[1px] border-solid border-[#E0E0E0] flex flex-row justify-between px-[16px] items-center"><button>< HiOutlineMinus/></button>  <p>1</p><button><IoAddOutline className="w-[16px] h-[16px] text-[#1F242E]"/></button> </div></TableCell>
+      <TableCell><AmountSetter/></TableCell>
       <TableCell className=" font-bold text-[#333333]">$521.00</TableCell>
       <TableCell className="active:text-[#FF9F0D] text-[#333333]"><button><RxCross2 className="w-[20px] h-[20px]"/></button></TableCell>
     </TableRow>
@@ -112,11 +118,11 @@ function shoppingCart() {
           <div><Image src="./shipp/product (1).svg" width={93} height={10} alt="burger"/></div>
           <div className="flex flex-col gap-[8px]">
             <p className="font-bold">Cheese Butter</p>
-          <p className="flex flex-row sm:gap-[8px] gap-[2px]  "><IoStar className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/><IoStar  className="sm:w-5 sm:h-5 w-[15px] h-[15px] text-[#E0E0E0] hover:text-[#FF9F0D]"/></p></div>
+          <div className="flex flex-row sm:gap-[8px] gap-[2px]  "><StarRating/></div></div>
         </div>
         </TableCell>
       <TableCell className="text-[#333333]">$15.00</TableCell>
-      <TableCell><div className=" w-[110px] h-[32px] rounded-[18px] border-[1px] border-solid border-[#E0E0E0] flex flex-row justify-between px-[16px] items-center"><button>< HiOutlineMinus/></button>  <p>1</p><button><IoAddOutline className="w-[16px] h-[16px] text-[#1F242E]"/></button> </div></TableCell>
+      <TableCell><AmountSetter/></TableCell>
       <TableCell className=" font-bold text-[#333333]">$325.00</TableCell>
       <TableCell className="active:text-[#FF9F0D] text-[#333333]"><button><RxCross2 className="w-[20px] h-[20px]"/></button></TableCell>
     </TableRow>
