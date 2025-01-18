@@ -20,16 +20,16 @@ function Header() {
           <div className="flex flex-row justify-center item-center text-[10px] sm:text-[16px] gap-[20px]  sm:gap-[34px] text-white" style={inter.style}>
           <Link href="./">Home</Link>
           <Link href="/Menu">Menu</Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">Pages</Link>
+          <Link href="/Blog">Blog</Link>
+          <Link href="/Pages">Pages</Link>
             <select className="bg-black app ">
               <option defaultValue="English">About</option>
               <option>A</option> 
               <option>B</option>
               <option>C</option>
             </select>
-          <Link href="/">Shop </Link>
-          <Link href="/">Contact </Link></div>
+          <Link href="/Shop">Shop </Link>
+          <Link href="/Contact">Contact </Link></div>
           <div className="flex flex-row justify-center items-center gap-[10px]">
           <form className="flex flex-row gap-[34px] justify-center items-center bg-black border-[#FF9F0D] border-[1px] border-solid py-[7px] pl-[20px] pr-[12px] rounded-full text-white">
             <input

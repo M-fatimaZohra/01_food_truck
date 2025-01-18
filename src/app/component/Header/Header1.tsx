@@ -35,8 +35,8 @@ function Header1() {
         </div>
         <div className="flex flex-row gap-[10px] sm:py-[8px] 2xl:py-0 text-white">
           <Button className="w-[24px] h-[24px]"><RiSearchLine /></Button>
-          <Button className="w-[24px] h-[24px]"><PiUserLight /></Button>
-          <Button className="w-[24px] h-[24px]"><PiHandbag /></Button>
+         <Link href="/SignUp"><Button className="w-[24px] h-[24px]"><PiUserLight /></Button></Link> 
+         <Link href="/wishlist"> <Button className="w-[24px] h-[24px]"><PiHandbag /></Button></Link> 
             
         </div>
       </div>

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
-import AmountSetter from "../component/counter/counter";
+import { AmountSetter }from "../component/counter/counter";
 import {
   Table,
   TableBody,

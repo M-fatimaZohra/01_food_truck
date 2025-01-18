@@ -2,19 +2,32 @@ import React from 'react'
 import Header1 from '../component/Header/Header1'
 import { Shop } from '../component/RouteHead/RouteHead'
 import { Inter } from "next/font/google";
-import { foodItems } from './object';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { Slider } from "@/components/ui/slider"
+import { sanityFetch } from "@/sanity/lib/live";
+import { Foods15 } from '@/sanity/lib/queries';
+import Link from 'next/link';
 
-
-import Image from 'next/image';
-const foodcard = foodItems
 
 const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
-function shop() {
+type Food = {
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  originalPrice: number;
+  tags: string[];
+  imageUrl: string;
+  description: string;
+  available: true
+}
+
+async function shop() {
+  const response = (await sanityFetch({ query:Foods15})).data;
+  const products: Food[] = response; 
   return (
     <div>
          <Header1 />
@@ -46,19 +59,20 @@ function shop() {
             </form>
           </div>
           <div className='grid grid-cols-3 gap-[32px]'>
-            {foodcard.map((food,)=>(
+            {products.map((food)=>(
               <div key={food._id} className='w-auto flex flex-col items-start justify-between gap-[8px]'>
-              <div>
-                <Image src={food.img} width={312} height={267} alt={food.title}/>
+              <div> 
+                <img src={food.imageUrl} width={312} height={267} alt={food.name}/>
               </div>
               <div className='w-full flex flex-col items-start justify-between gap-[8px]'>
 
-               <h3 className='font-bold text-[18px]'>{food.title}</h3>
+               <h3 className='font-bold text-[18px]'>{food.name}</h3>
                <div className='w-auto flex flex-row items-start justify-between gap-[16px]'>
-                <div className='text-[#FF9F0D]'>${food.price.toFixed(2)}</div>
-                <div>{food.discountPrice? <div className='text-[#828282] line-through'>${food.discountPrice.toFixed(2)}</div> : <div className='hidden'></div>}</div>
+                <div className='text-[#FF9F0D]'>${food.originalPrice.toFixed(2)}</div>
+                <div>{food.price? <div className='text-[#828282] line-through'>${food.price.toFixed(2)}</div> : <div className='hidden'></div>}</div>
                </div>
                 </div>
+                <Button variant="primary" size="none" className='p-1 px-2'><Link href={`/Shop/${food._id}`} className='text-[14px]'>Order Now!</Link></Button>
               </div>
             ))}
           </div>
@@ -114,3 +128,4 @@ function shop() {
 }
 
 export default shop
+

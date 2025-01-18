@@ -229,3 +229,57 @@ export function Shop() {
     </div>
   )
 }
+
+export function Chefs() {
+  return (
+    <div className='w-full lg:h-[410px] h-[300px] flex flex-col justify-center items-center  bg-[url("/compMaterial/routehead.svg")]'>
+        <div className='flex flex-col justify-center items-center gap-[20px] text-white'>
+            <h1 className='text-[48px] font-bold '>Chefs</h1>
+            <Breadcrumb className='flex flex-col justify-center items-center '>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Link href="./" className='text-white text-[20px]' style={inter.style}>Home</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator className='text-white text-[20px]' style={inter.style}/>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Link href="/Chefs" className='text-[#FF9F0D] text-[20px]' style={inter.style}>Chefs</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        
+      </BreadcrumbList>
+    </Breadcrumb>
+            </div>
+      
+    </div>
+  )
+}
+
+export function ShopItems() {
+  return (
+    <div className='w-full lg:h-[410px] h-[300px] flex flex-col justify-center items-center  bg-[url("/compMaterial/routehead.svg")]'>
+        <div className='flex flex-col justify-center items-center gap-[20px] text-white'>
+            <h1 className='text-[48px] font-bold '>Shop Items</h1>
+            <Breadcrumb className='flex flex-col justify-center items-center '>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Link href="./" className='text-white text-[20px]' style={inter.style}>Home</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator className='text-white text-[20px]' style={inter.style}/>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Link href={`/Shop}`} className='text-[#FF9F0D] text-[20px]' style={inter.style}>Shop Items</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        
+      </BreadcrumbList>
+    </Breadcrumb>
+            </div>
+      
+    </div>
+  )
+}
