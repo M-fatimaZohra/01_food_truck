@@ -4,7 +4,6 @@ import Header1 from "../component/Header/Header1";
 import { Inter } from "next/font/google";
 import StarRating from "../component/star/star";
 import { Button } from "@/components/ui/button";
-
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import { AmountSetter }from "../component/counter/counter";
@@ -23,13 +22,7 @@ const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 
 
-// const amount = ["35.00","25.00","15.00","45.00","15.00"]
 
-// const amountn = [35.00,25.00,15.00,45.00,15.00]
-
-// amountn.map((add)=>(
-//   add 
-// ))
 
 
 function shoppingCart() {
@@ -41,6 +34,7 @@ function shoppingCart() {
         className="flex flex-col justify-center items-center gap-[20px]   py-[150px]"
         style={inter.style}
       >
+        
         <div className="flex xl:flex-row flex-col items-start h-auto gap-[32px]">
          <div>
          <Table>

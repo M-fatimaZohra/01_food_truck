@@ -1,7 +1,20 @@
 import { defineQuery } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 
-export const Foods = defineQuery(
-    `*[_type == "food"]{
+type Food = {
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  originalPrice: number;
+  tags: string[];
+  imageUrl: string;
+  description: string;
+  available: true;
+};
+export async function Foodstest (page:number,perpage:number){
+  const res = await client.fetch(
+    `*[_type == "food"][${page}..${perpage}]{
   _id,
   name,
   description,
@@ -14,9 +27,35 @@ export const Foods = defineQuery(
     
     
 }`)
+const Food:Food[] =await res
+const totalCards = parseInt(res.headers.get("X-total-Count")|| "0")
+return {Food, totalCards} 
 
-export const Foods15 = defineQuery(
-  `*[_type == "food"][0..14]{
+}
+
+export async function Foods15 (page:number,perpage:number){
+  const res = await client.fetch(
+    `*[_type == "food"][${page}..${perpage}]{
+  _id,
+  name,
+  description,
+  price,
+  category,
+    originalPrice,
+    tags,
+    "imageUrl":image.asset -> url,
+   available 
+    
+    
+}`)
+const Food:Food[] =await res
+return Food 
+
+}
+ 
+
+export const Foods = defineQuery(
+  `*[_type == "food"]{
 _id,
 name,
 description,

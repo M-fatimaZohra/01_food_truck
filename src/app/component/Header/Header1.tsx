@@ -13,8 +13,8 @@ const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 function Header1() {
   return (
     <div className=" w-full h-auto  bg-black">
-      <div className="xl:absolute sm:static flex 2xl:flex-row sm:flex-col xs:flex-col 2xl:justify-between sm:justify-center items-center bg-black w-full lg:h-[90px] sm:px-[300px] xs:px-[20px] ">
-      <div className="w-full 2xl:h-[45px]  flex lg:flex-row sm:flex-col xs:flex-col 2xl:justify-between xs:justify-center items-center 2xl:gap-0 sm:gap-[10px]">
+      <div className="xl:absolute sm:static flex 2xl:flex-row sm:flex-col flex-col 2xl:justify-between sm:justify-center items-center bg-black w-full lg:h-[90px] sm:px-[300px] px-[20px] ">
+      <div className="w-full 2xl:h-[45px]  flex lg:flex-row sm:flex-col flex-col 2xl:justify-between justify-center items-center 2xl:gap-0 sm:gap-[10px]">
         <div className="flex flex-row gap-0 justify-center items-center text-[24px] font-bold ">
           <h1 className="text-[#FF9F0D]">Food</h1>
           <h1 className="text-white">tuck</h1>
@@ -36,7 +36,7 @@ function Header1() {
         <div className="flex flex-row gap-[10px] sm:py-[8px] 2xl:py-0 text-white">
           <Button className="w-[24px] h-[24px]"><RiSearchLine /></Button>
          <Link href="/SignUp"><Button className="w-[24px] h-[24px]"><PiUserLight /></Button></Link> 
-         <Link href="/wishlist"> <Button className="w-[24px] h-[24px]"><PiHandbag /></Button></Link> 
+         <Link href="/Wishlist"> <Button className="w-[24px] h-[24px]"><PiHandbag /></Button></Link> 
             
         </div>
       </div>
