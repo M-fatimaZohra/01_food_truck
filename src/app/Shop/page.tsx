@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header1 from "../component/Header/Header1";
 import { Shop } from "../component/RouteHead/RouteHead";
 import { Inter } from "next/font/google";
@@ -54,6 +54,16 @@ function ShopItems() {
       setSelectedFilter([...selectedFilter, selectCatagory]);
     }
   };
+  const filterItems = useCallback((products: Food[]) => {
+    if (selectedFilter.length > 0) {
+      const items = selectedFilter.flatMap((selectedCategory) =>
+        products.filter((item) => item.category === selectedCategory)
+      );
+      setFilteredItems(items);
+    } else {
+      setFilteredItems(products);
+    }
+  }, [selectedFilter]);
 
   useEffect(() => {
     //for check box
@@ -71,21 +81,9 @@ function ShopItems() {
       console.log("this is running before component load");
       setLoading(false);
     }, 5000);
-  }, [selectedFilter]);
+  }, [filterItems]);
 
-  const filterItems = (products: Food[]) => {
-    if (selectedFilter.length > 0) {
-      const items = selectedFilter.map((selectedCatagory) => {
-        const template = products.filter(
-          (item) => item.category === selectedCatagory //separate and find catagory
-        );
-        return template;
-      });
-      setFilteredItems(items.flat()); // set all catagory in one array
-    } else {
-      setFilteredItems([...products]);
-    }
-  };
+  
   const load = (
     <div className="flex justify-center items-center h-screen lg:w-[984px] w-auto">
       <div className="border-solid border-[#FF9F0D] border-b-[5px] border-t-[3px] w-auto h-auto animate-spin rounded-full duration-500 ">
