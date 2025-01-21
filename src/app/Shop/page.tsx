@@ -67,10 +67,14 @@ function ShopItems() {
 
   useEffect(() => {
     //for check box
+    
     const fetchData = async () => {
-      const products:Food[] = await Foods15(0,14);
-      console.log(products)
+      try {
+      const products: Food[] = await Foods15(0, 14);
       filterItems(products);
+      } catch (error) {
+      console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();

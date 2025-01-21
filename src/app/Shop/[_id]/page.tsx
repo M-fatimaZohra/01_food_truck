@@ -13,6 +13,7 @@ import { Foods15 } from "@/sanity/lib/queries";
 import Link from "next/link";
 
 
+
 const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 type ItemParams = {
@@ -57,18 +58,21 @@ async function getItems(_id: string) {
 }
 
 async function page({ params }: ItemParams) {
-  const products: Food[] = await Foods15(0, 14);//get all products
+
   const itemsInfo:Food = await getItems((await params)._id); // Fetch  data using the `id` from URL
 
+  const products: Food[] = await Foods15(0, 14);//get all products
 
 
   const showAlert = () => {
-    alert("Item added to cart"); //just for alert effect
+    alert("Item added to cart"); 
+    console.log("Item added to cart");//just for alert effect
   };
 
   const addTOWishList = ()=>{
   
-    alert("Item added to Wish list");//just for alert effect
+    alert("Item added to Wish list")
+    console.log("Item added to Wish list");//just for alert effect
   }
  
 
@@ -128,6 +132,7 @@ async function page({ params }: ItemParams) {
             </div>
             <div className="flex flex-row gap-[16px]">
               <div>
+                
                 <AmountSetterShop />
               </div>
               <div>

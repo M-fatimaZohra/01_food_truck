@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { HiOutlineMinus } from 'react-icons/hi';
 import { IoAddOutline } from 'react-icons/io5';
 
+
+// for add to car section
 export function AmountSetter() {
   
   const [amount, setAmount] = useState(1);
@@ -39,7 +41,7 @@ export function AmountSetter() {
 
 
 
-
+//diyanamic route section
 export function AmountSetterShop() {
   
   const [amount, setAmount] = useState(1);
