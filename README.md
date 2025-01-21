@@ -1,76 +1,87 @@
+# Q-Commerce Food Website - Food Tuck
 
+## Project Overview
 
----
+A Q-commerce food website that allows users to browse and order food. The project is currently under construction due to some glitches. It includes features such as food listings, dynamic interactions, and API integration.
 
-# **Elite - Food Restaurant & Coffee Website**  
+## Current Status
 
-A modern and responsive restaurant website inspired by the [Elite - Food Restaurant & Coffee Free Figma Template](https://www.figma.com/design/0NuVQPnhzrb25ArsOT7nQ4/Elite---Food-Restaurant-%26-Coffee-Free-Figma-Template). Built during a 24-hour hackathon, this project focuses on clean design and functionality using the latest web development tools.
+- **Under Construction**: The project is experiencing the following issues:
+  - `/Shop` route: Food list is not appearing on Vercel or network address, but it works on `localhost:3000`.
+  - In /Shop/:[id], some features like color-changing ratings, counters, and alert buttons are not functioning due to unknown glitch
+  - APIs are functioning correctly:
+    - `GET /foods`: Success
+    - `GET /food/:id`: Success
 
----
+## Tech Stack
 
-## **Features**  
+- **Framework**: Next.js
+- **CMS**: Sanity
+- **API**: Hackathon-provided API
+- **UI Library**: Shadcn
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons
 
-- **Header & Footer**: Clean and functional layout for easy navigation.  
-- **Home Hero Section**: Captivating visuals to introduce the restaurant.  
-- **Menu Section**: Showcases food and coffee options in an elegant design.  
-- **404 Page**: User-friendly error handling with a polished interface.  
-- **Responsive Design**: Optimized for all devices, including mobile, tablet, and desktop.  
+## Deployment Process
 
----
+### Steps for Deployment
 
-## **Technologies Used**  
+1. **Build the project**:
 
-- **[Tailwind CSS](https://tailwindcss.com/)**: For modern and responsive styling.  
-- **[shadcn](https://shadcn.dev/)**: For reusable and customizable components.  
-- **[Next.js](https://nextjs.org/)**: A powerful React framework for building scalable web applications.  
-
----
-
-## **Getting Started**  
-
-To run this project locally, follow these steps:  
-
-1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/elite-restaurant.git
-   ```  
+   npm run build
+   npm run start
+   npm run lint
+   ```
 
-2. Navigate to the project directory:  
+2. **Push code to GitHub**:
+
    ```bash
-   cd elite-restaurant
-   ```  
+   git add .
+   git commit -m "your message"
+   git push -u origin main
+   ```
 
-3. Install dependencies:  
-   ```bash
-   npm install
-   ```  
+3. **Deploy to Vercel**:
 
-4. Start the development server:  
-   ```bash
-   npm run dev
-   ```  
+   - Log in to your [Vercel](https://vercel.com/) account.
+   - Import the GitHub repository for the project.
+   - Start the deployment process.
 
-5. Open your browser and visit:  
-   ```  
-   http://localhost:3000  
-   ```  
+4. **Fix Environment Variables**:
 
----
+   - Navigate to the project dashboard in Vercel.
+   - Go to `Settings > Environment Variables`.
+   - Upload the `.env.local` file.
 
+5. **Redeploy the project**:
 
-## **Challenges & Achievements**  
+   - Go to the project dashboard > Deployment section.
+   - On the latest deployment, click the `...` menu.
+   - Select "Redeploy" and confirm.
 
-- Successfully built core components (header, footer, hero section, 404 page, menu section) within the 24-hour time frame.  
-- Independently tackled the challenge, showcasing problem-solving and design implementation skills.  
-- Fully aligned the project with the provided Figma design template.  
+6. **Successful Deployment**: Once redeployed, the project should work as expected.
 
----
+## Issues and Workarounds
 
-## **Contact**  
+- **Experimental API Warning**:
+  The build log includes the following warning:
 
-**Fatima Zohra**  
-- **Email**: [fatima.zohra10122007@gmail.com]  
-- **GitHub**: [Your GitHub Profile](https://github.com/M-fatimaZohra)  
+  ```
+  This is an experimental API version, which will change without warning and may have serious bugs.
+  ```
 
---- 
+  - **Solution**: Ensure the API version is compatible with the current dependencies and frameworks being used. Check the API documentation for updates or stable versions.
+
+- **Route and Dynamic Features Glitch**:
+
+  - `/Shop/:id` route not functioning as expected on Vercel.
+  - Dynamic features like rating color changes, counters, and alert buttons are not responsive.
+  - **Solution**: Debug these features locally and ensure compatibility with the production environment. Use logging or debugging tools to identify the root cause.
+
+## Contact
+
+If you have any questions or suggestions, feel free to contact me:
+
+- **Email**: [fatima.zohra10122007@gmail.com](mailto\:fatima.zohra10122007@gmail.com)
 
