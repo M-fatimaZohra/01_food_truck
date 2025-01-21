@@ -87,7 +87,7 @@ async function page({ params }: ItemParams) {
       <Header1 />
       <ShopItems />
       <div className="flex flex-col  justify-center items-center py-[150px] gap-10">
-        <div className="flex flex-row  justify-center items-center  gap-10">
+        <div className="flex lg:flex-row flex-col  justify-center lg:items-center items-start lg:px-0 px-[16px]  gap-10">
         <div >
           <img
             src={itemsInfo.imageUrl}
@@ -97,7 +97,7 @@ async function page({ params }: ItemParams) {
             className="rounded-[6px]"
           />
         </div>
-        <div className="w-[608px] flex flex-col gap-[16px]">
+        <div className="md:w-[608px] w-auto flex flex-col gap-[16px]">
           <div className=" flex flex-col ">
             <div className=" py-2 px-1 rounded-[6px] text-white w-auto h-auto flex">
               {itemsInfo.available ? (
@@ -110,10 +110,10 @@ async function page({ params }: ItemParams) {
                 </div>
               )}
             </div>
-            <h1 className="font-helvetica font-bold text-[48px]">
+            <h1 className="font-helvetica font-bold lg:text-[48px] text-[32px]">
               {itemsInfo.name}
             </h1>
-            <p className="text-[#4F4F4F] text-[18px]" style={inter.style}>
+            <p className="text-[#4F4F4F] md:text-[18px] text-[12px]" style={inter.style}>
               {itemsInfo.description}
             </p>
           </div>
@@ -126,11 +126,11 @@ async function page({ params }: ItemParams) {
             <div>
               <StarRating />
             </div>
-            <div>
+            <div className="text-black md:text-[18px] text-[12px]">
               {itemsInfo.tags.join(" / ")}
               {/* to make tags like "food / cheezy / spicy" */}
             </div>
-            <div className="flex flex-row gap-[16px]">
+            <div className="flex md:flex-row flex-col gap-[16px]">
               <div>
                 
                 <AmountSetterShop />
