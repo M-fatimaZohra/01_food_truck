@@ -40,7 +40,7 @@ function Searchbar() {
 
     return (
         <div>
-            <form className="bg-[#fef3e1] h-[46px] flex flex-row gap-0 justify-between items-center" onSubmit={handleSubmittion}>
+            <form className="bg-[#fef3e1] h-[46px] w-auto flex flex-row gap-0 justify-between items-center" onSubmit={handleSubmittion}>
                 <input
                     type="text"
                     placeholder="Search Product"

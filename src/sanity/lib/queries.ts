@@ -1,17 +1,8 @@
 import { defineQuery } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { Food } from "@/lib/types";
 
-type Food = {
-  _id: string;
-  name: string;
-  category: string;
-  price: number;
-  originalPrice: number;
-  tags: string[];
-  imageUrl: string;
-  description: string;
-  available: true;
-};
+
 export async function Foodstest (page:number,perpage:number){
   const res = await client.fetch(
     `*[_type == "food"][${page}..${perpage}]{
@@ -33,6 +24,7 @@ return {Food, totalCards}
 
 }
 
+//for /Shop
 export async function Foods15 (page:number,perpage:number){
   const res = await client.fetch(
     `*[_type == "food"][${page}..${perpage}]{
@@ -97,4 +89,20 @@ specialty,
   
   
 }`)
+
+export const getItemById = defineQuery(
+  `*[_type == "food" && _id == $id]{
+    "_id": _id,
+    name,
+    description,
+    price,
+    category,
+    originalPrice,
+    tags,
+    "imageUrl":image.asset -> url,
+    available
+  }`
+);
+
+
 

@@ -3,6 +3,7 @@ import Header1 from '../component/Header/Header1'
 import { Chefs } from '../component/RouteHead/RouteHead'
 import { sanityFetch } from "@/sanity/lib/live";
 import { ChefsData12 } from '@/sanity/lib/queries';
+import Image from 'next/image';
 
 type Chef = {
   _id: string;
@@ -27,7 +28,7 @@ async function page() {
         {chefs.slice(0,12).map((chef)=>(
         <div key={chef._id} className='w-auto flex flex-col items-center justify-between gap-[8px]'>
           <div>
-          <img src={chef.imageUrl} width={312} height={379} alt={chef.name}/>
+          <Image src={chef.imageUrl} width={312} height={379} alt={chef.name}/>
            </div>
 <p className='font-bold text-[20px]'>{chef.name}</p>
 <p>{chef.position}</p>

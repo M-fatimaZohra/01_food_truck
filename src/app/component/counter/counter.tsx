@@ -4,7 +4,7 @@ import { HiOutlineMinus } from 'react-icons/hi';
 import { IoAddOutline } from 'react-icons/io5';
 
 
-// for add to car section
+// for add to cart section
 export function AmountSetter() {
   
   const [amount, setAmount] = useState(1);
@@ -41,10 +41,10 @@ export function AmountSetter() {
 
 
 
-//diyanamic route section
-export function AmountSetterShop() {
+//dyanamic route section
+export function AmountSetterShop(props:{qty:number}) {
   
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(props.qty);
 
   
   const increment = () => {
@@ -57,7 +57,7 @@ export function AmountSetterShop() {
     setAmount(prevAmount => Math.max(prevAmount - 1, 1));
   };
 
-  
+
   
 
   return (

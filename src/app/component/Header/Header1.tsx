@@ -26,7 +26,7 @@ function Header1() {
           >
             <Link href="./">Home</Link>
             <Link href="/Menu">Menu</Link>
-            <Link href="/Blog">Blog</Link>
+            <Link href="/ShoppingCart">Cart</Link>
             <Link href="/Pages">Pages</Link>
             <Link href="/About">About</Link>
             <Link href="/Shop">Shop </Link>

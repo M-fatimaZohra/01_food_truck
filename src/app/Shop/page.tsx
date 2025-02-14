@@ -10,21 +10,9 @@ import { Slider } from "@/components/ui/slider";
 import { Foods15 } from "@/sanity/lib/queries";
 import Link from "next/link";
 import Searchbar from "../component/Searchbar/searchbar";
-
-
+import { Food } from "@/lib/types";
+import { foodItems } from "./object";
 const inter = Inter({ weight: ["400", "700"], subsets: ["latin"] });
-
-type Food = {
-  _id: string;
-  name: string;
-  category: string;
-  price: number;
-  originalPrice: number;
-  tags: string[];
-  imageUrl: string;
-  description: string;
-  available: true;
-};
 
 
 const filters = [
@@ -38,46 +26,19 @@ const filters = [
   "Non Veg",
 ];
 
-
 function ShopItems() {
-  const [selectedFilter, setSelectedFilter] = useState<string[]>([]); //check box
-  const [filteredItems, setFilteredItems] = useState<Food[]>([]); //check box
+ //check box
   const [loading, setLoading] = useState(false); //loader
 
-
-  //for check box
-  const HandleFilterButtonWhenClick = (selectCatagory: string) => {
-    if (selectedFilter.includes(selectCatagory)) {
-      const filter = selectedFilter.filter((e) => e !== selectCatagory); //remove items that is not equal to selected check box
-      setSelectedFilter(filter);
-    } else {
-      setSelectedFilter([...selectedFilter, selectCatagory]);
-    }
-  };
-  const filterItems = useCallback((products: Food[]) => {
-    if (selectedFilter.length > 0) {
-      const items = selectedFilter.flatMap((selectedCategory) =>
-        products.filter((item) => item.category === selectedCategory)
-      );
-      setFilteredItems(items);
-    } else {
-      setFilteredItems(products);
-    }
-  }, [selectedFilter]);
+  
+ 
 
   useEffect(() => {
     //for check box
-    
-    const fetchData = async () => {
-      try {
-      const products: Food[] = await Foods15(0, 14);
-      filterItems(products);
-      } catch (error) {
-      console.error("Error fetching data:", error);
-      }
-    };
 
-    fetchData();
+  
+
+
 
     //create loader
     setLoading(true);
@@ -85,9 +46,8 @@ function ShopItems() {
       console.log("this is running before component load");
       setLoading(false);
     }, 5000);
-  }, [filterItems]);
+  }, []);
 
-  
   const load = (
     <div className="flex justify-center items-center h-screen lg:w-[984px] w-auto">
       <div className="border-solid border-[#FF9F0D] border-b-[5px] border-t-[3px] w-auto h-auto animate-spin rounded-full duration-500 ">
@@ -130,29 +90,29 @@ function ShopItems() {
                 </form>
               </div>
               <div className="grid lg:grid-cols-3  lg:gap-[32px] grid-col-1 gap-[16px]">
-                {filteredItems.map((food) => (
+                {foodItems.map((food) => (
                   <div
                     key={food._id}
                     className="w-auto flex flex-col items-start justify-between gap-[8px]"
                   >
                     <div>
                       <img
-                        src={food.imageUrl}
+                        src={food.img}
                         width={312}
                         height={267}
-                        alt={food.name}
+                        alt={food.title}
                       />
                     </div>
                     <div className="w-full flex flex-col items-start justify-between gap-[8px]">
-                      <h3 className="font-bold text-[18px]">{food.name}</h3>
+                      <h3 className="font-bold text-[18px]">{food.title}</h3>
                       <div className="w-auto flex flex-row items-start justify-between gap-[16px]">
                         <div className="text-[#FF9F0D]">
-                          ${food.originalPrice.toFixed(2)}
-                        </div>
+                          ${food.price.toFixed(2)}
+                        </div> 
                         <div>
-                          {food.price ? (
+                          {food.discountPrice ? (
                             <div className="text-[#828282] line-through">
-                              ${food.price.toFixed(2)}
+                              ${food.discountPrice.toFixed(2)}
                             </div>
                           ) : (
                             <div className="hidden"></div>
@@ -160,34 +120,10 @@ function ShopItems() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-row w-full justify-between items-center">
-                      <Button
-                        variant="primary"
-                        size="none"
-                        className="py-2 px-2 hover:bg-[#ffaf37] drop-shadow-[3px_3px_1px_rgba(189,188,187,0.5)] active:drop-shadow-none"
-                      >
-                        <Link
-                          href={`/Shop/${food._id}`}
-                          className="text-[14px]"
-                        >
-                          Order Now!
-                        </Link>
-                      </Button>
-                      <div className=" py-2 px-1 rounded-[6px] text-white w-auto h-auto flex">
-                        {food.available ? (
-                          <div className="bg-[#FF9F0D] px-[6px] py-[7px] rounded-[6px]">
-                            In stock
-                          </div>
-                        ) : (
-                          <div className="bg-[#595858] px-[6px] py-[7px] rounded-[6px]">
-                            Stock Out
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                    
                   </div>
                 ))}
-                {/* <Cards/>  */}
+               
               </div>
             </div>
           </div>
@@ -203,13 +139,12 @@ function ShopItems() {
               </h6>
             </div>
             <div className="md:flex flex-col grid sm:grid-cols-4 grid-cols-2 gap-[16px]">
-              {filters.map((catagory,i) => (
+              {filters.map((catagory, i) => (
                 <div key={i} className="flex flex-row gap-[8px]">
-                  {" "}
                   <Checkbox
                     id="terms"
                     className=""
-                    onClick={() => HandleFilterButtonWhenClick(catagory)}
+                  
                   />
                   <span className="text-sm text-[#333333]">{catagory}</span>
                 </div>
